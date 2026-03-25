@@ -304,7 +304,6 @@ tests/Feature/Notification/Http/                 # Webhook controller test
 
 | Decision | Reasoning |
 |---|---|
-| **InvoiceProductLine as Entity** | Has identity — two identical lines are distinct. Future-proof for per-line operations. |
 | **Private constructors + factories** | `create()` for new, `reconstitute()` for DB hydration. Always valid state. |
 | **`reconstitute()` skips validation** | Persisted data was validated at creation. Re-validating breaks historical data if rules change. |
 | **Separate read/write repositories** | CQRS: read returns ViewModels, write works with domain entities. |
