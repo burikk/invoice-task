@@ -31,7 +31,7 @@ final class NotificationFacadeTest extends TestCase
 
     public function testDelivered(): void
     {
-        $data = new NotifyData(
+        $data = NotifyData::create(
             resourceId: Str::uuid(),
             toEmail: $this->faker->email(),
             subject: $this->faker->sentence(),
